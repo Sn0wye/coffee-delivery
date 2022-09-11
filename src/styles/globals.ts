@@ -19,6 +19,11 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  button {
+    line-height: 1.6;
   }
 
   body {
@@ -26,8 +31,4 @@ export const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme.base.text};
     -webkit-font-smoothing: antialiased;
   }
-
-  
-
-
 `;
