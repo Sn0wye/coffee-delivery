@@ -6,8 +6,8 @@ export const HeaderContainer = styled.header`
   align-items: center;
 
   margin: 0 auto;
-  max-width: 1120px;
-  padding: 2rem 0;
+  max-width: 1152px;
+  padding: 2rem 1rem;
 `;
 
 export const RightGroup = styled.div`
