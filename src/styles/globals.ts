@@ -11,11 +11,23 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
+  :focus {
+    box-shadow: 0 0 0 1px ${(props) => props.theme['yellow-dark']};
+  }
+
   body, input, textarea, button {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 1rem;
   }
+
+  body {
+    background: ${(props) => props.theme.background};
+    color: ${(props) => props.theme.base.text};
+    -webkit-font-smoothing: antialiased;
+  }
+
+  
 
 
 `;
