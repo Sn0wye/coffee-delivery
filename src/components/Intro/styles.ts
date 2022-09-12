@@ -8,6 +8,7 @@ export const IntroContainer = styled.section`
   justify-content: space-between;
   align-items: center;
 
+  height: 34rem;
   margin: 0 auto;
   gap: 3.5rem;
 
