@@ -8,6 +8,7 @@ import {
   Details,
   Price,
   Tag,
+  Tags,
 } from './styles';
 
 interface Props {
@@ -33,9 +34,11 @@ export const Card = ({ name, description, price, tags, image }: Props) => {
   return (
     <CardContainer>
       <img src={image} alt={`Image of a ${name}`} />
-      {tags.map((tag) => (
-        <Tag key={tag}>{tag}</Tag>
-      ))}
+      <Tags>
+        {tags.map((tag) => (
+          <Tag key={tag}>{tag}</Tag>
+        ))}
+      </Tags>
       <h3>{name}</h3>
       <p>{description}</p>
 

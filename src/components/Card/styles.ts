@@ -27,10 +27,27 @@ export const CardContainer = styled.div`
     text-align: center;
     font-size: 0.875rem;
   }
+
+  img {
+    margin-top: -3rem;
+  }
+`;
+
+export const Tags = styled.div`
+  display: flex;
+  gap: 0.25rem;
 `;
 
 export const Tag = styled.span`
   margin-top: 0.75rem;
+
+  padding: 0.25rem 0.5rem;
+  color: ${(props) => props.theme['yellow-dark']};
+  background: ${(props) => props.theme['yellow-light']};
+  border-radius: 100px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.625rem;
 `;
 
 export const Details = styled.div`
@@ -43,7 +60,7 @@ export const Details = styled.div`
 
 export const Price = styled.span`
   font-size: 0.875rem;
-  color: ${(props) => props.theme.base.title};
+  color: ${(props) => props.theme.base.text};
 
   gap: 0.5rem;
 
