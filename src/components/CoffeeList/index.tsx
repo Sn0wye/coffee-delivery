@@ -1,3 +1,4 @@
+import { coffeeOptions } from '../../data/coffee';
 import { Card } from '../Card';
 import { CoffeeListContainer, List } from './styles';
 
@@ -6,14 +7,9 @@ export const CoffeeList = () => {
     <CoffeeListContainer>
       <h2>Nossos cafés</h2>
       <List>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {coffeeOptions.map((coffee) => (
+          <Card key={coffee.name} {...coffee} />
+        ))}
       </List>
     </CoffeeListContainer>
   );
