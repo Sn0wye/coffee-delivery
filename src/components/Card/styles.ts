@@ -65,8 +65,16 @@ export const Counter = styled.span`
   padding: 0.5rem;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
   border-radius: 6px;
+
+  button {
+    display: grid;
+    place-content: center;
+    all: unset;
+    cursor: pointer;
+    height: 1.25rem;
+  }
 `;
 
 export const CartButton = styled.button`

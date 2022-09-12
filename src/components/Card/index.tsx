@@ -1,4 +1,5 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react';
+import { useState } from 'react';
 import coffee1 from '../../assets/coffees/coffee-1.png';
 import {
   Actions,
@@ -11,6 +12,17 @@ import {
 } from './styles';
 
 export const Card = () => {
+  const [counter, setCounter] = useState(1);
+
+  const increment = () => {
+    setCounter((state) => state + 1);
+  };
+
+  const decrement = () => {
+    if (counter <= 1) return;
+    setCounter((state) => state - 1);
+  };
+
   return (
     <CardContainer>
       <img src={coffee1} alt='' />
@@ -24,9 +36,13 @@ export const Card = () => {
         </Price>
         <Actions>
           <Counter>
-            <Minus size={14} color='#8047F8' weight='bold' />
-            2
-            <Plus size={14} color='#8047F8' weight='bold' />
+            <button onClick={decrement}>
+              <Minus size={20} color='#8047F8' weight='fill' />
+            </button>
+            {counter}
+            <button onClick={increment}>
+              <Plus size={20} color='#8047F8' weight='fill' />
+            </button>
           </Counter>
           <CartButton>
             <ShoppingCart size={22} weight='fill' />
