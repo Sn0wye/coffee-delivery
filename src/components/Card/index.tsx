@@ -1,6 +1,5 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react';
 import { useState } from 'react';
-import coffee1 from '../../assets/coffees/coffee-1.png';
 import {
   Actions,
   CardContainer,
@@ -11,7 +10,15 @@ import {
   Tag,
 } from './styles';
 
-export const Card = () => {
+interface Props {
+  name: string;
+  description: string;
+  price: number;
+  tags: string[];
+  image: string;
+}
+
+export const Card = ({ name, description, price, tags, image }: Props) => {
   const [counter, setCounter] = useState(1);
 
   const increment = () => {
@@ -25,14 +32,16 @@ export const Card = () => {
 
   return (
     <CardContainer>
-      <img src={coffee1} alt='' />
-      <Tag>Tradicional</Tag>
-      <h3>Expresso Tradicional</h3>
-      <p>O tradicional café feito com água quente e grãos moídos</p>
+      <img src={image} alt={`Image of a ${name}`} />
+      {tags.map((tag) => (
+        <Tag key={tag}>{tag}</Tag>
+      ))}
+      <h3>{name}</h3>
+      <p>{description}</p>
 
       <Details>
         <Price>
-          R$ <span>9,90</span>
+          R$ <span>{price.toFixed(2)}</span>
         </Price>
         <Actions>
           <Counter>
