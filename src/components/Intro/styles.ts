@@ -8,12 +8,20 @@ export const IntroContainer = styled.section`
   justify-content: space-between;
   align-items: center;
 
-  height: 34rem;
-  margin: 0 auto;
+  margin: 5.875rem auto 0;
   gap: 3.5rem;
 
-  @media (max-width: 768px) {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 1024px) {
     flex-direction: column;
+
+    img {
+      width: 50%;
+    }
   }
 `;
 

@@ -23,11 +23,13 @@ export const List = styled.div`
   gap: 2rem;
   margin-bottom: 10rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 5rem;
   }
 
-  @media (max-width: 560px) {
+  @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 2.5rem;
   }
 `;
