@@ -8,7 +8,7 @@ export const IntroContainer = styled.section`
   justify-content: space-between;
   align-items: center;
 
-  margin: 5.875rem auto 0;
+  margin: 5.875rem auto 6.75rem;
   gap: 3.5rem;
 
   img {
