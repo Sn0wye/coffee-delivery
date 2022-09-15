@@ -59,7 +59,7 @@ export const Input = styled.input`
   }
 `;
 
-export const Form = styled.form`
+export const AddressForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -104,4 +104,71 @@ export const RadioGroup = styled.button<RadioGroupProps>`
       border: 1px solid ${(props) => props.theme.purple};
       background: ${(props) => props.theme['purple-light']};
     `}
+`;
+
+export const SelectedCoffeeCard = styled.div`
+  display: flex;
+  padding: 0.5rem;
+
+  img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 1.25rem;
+    gap: 0.5rem;
+  }
+`;
+
+export const Actions = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`;
+
+export const CounterSelect = styled.span`
+  background: ${(props) => props.theme.base.button};
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 6px;
+
+  button {
+    display: grid;
+    place-content: center;
+    all: unset;
+    cursor: pointer;
+    height: 1.25rem;
+  }
+`;
+
+export const Price = styled.span`
+  font-weight: bold;
+  color: ${(props) => props.theme.base.text};
+  margin-left: auto;
+`;
+
+export const RemoveButton = styled.button`
+  padding: 0.5rem;
+  background: ${(props) => props.theme.base.button};
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: ${(props) => props.theme.base.text};
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background: ${(props) => props.theme.base.hover};
+  }
 `;

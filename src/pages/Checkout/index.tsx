@@ -3,21 +3,38 @@ import {
   CreditCard,
   CurrencyDollar,
   MapPin,
+  Minus,
   Money,
+  Plus,
+  Trash,
 } from 'phosphor-react';
+import { useState } from 'react';
+import imagemlegal from '../../assets/coffees/arab.png';
 import {
+  Actions,
+  AddressForm,
   Card,
   CardHeader,
   CheckoutContainer,
-  Form,
+  CounterSelect,
   FormGroup,
   Input,
   PaymentOptions,
+  Price,
   RadioGroup,
+  RemoveButton,
+  SelectedCoffeeCard,
 } from './styles';
 
 export const Checkout = () => {
-  // const [paymentOption, setPaymentOption] =
+  const [counter, setCounter] = useState(1);
+
+  const increment = () => {
+    setCounter(counter + 1);
+  };
+  const decrement = () => {
+    setCounter(counter - 1);
+  };
 
   return (
     <CheckoutContainer>
@@ -32,7 +49,7 @@ export const Checkout = () => {
             </div>
           </CardHeader>
 
-          <Form>
+          <AddressForm>
             <FormGroup>
               <Input type='text' placeholder='CEP' />
             </FormGroup>
@@ -46,7 +63,7 @@ export const Checkout = () => {
               <Input type='text' placeholder='Cidade' />
               <Input type='text' placeholder='UF' />
             </FormGroup>
-          </Form>
+          </AddressForm>
         </Card>
 
         <Card>
@@ -76,7 +93,31 @@ export const Checkout = () => {
 
       <div>
         <h3>Cafés selecionados</h3>
-        <Card></Card>
+
+        <Card>
+          <SelectedCoffeeCard>
+            <img src={imagemlegal} alt='' />
+            <div>
+              <p>Expresso Tradicional</p>
+              <Actions>
+                <CounterSelect>
+                  <button onClick={decrement}>
+                    <Minus size={20} color='#8047F8' weight='fill' />
+                  </button>
+                  {counter}
+                  <button onClick={increment}>
+                    <Plus size={20} color='#8047F8' weight='fill' />
+                  </button>
+                </CounterSelect>
+                <RemoveButton>
+                  <Trash size={16} color='#8047F8' />
+                  Remover
+                </RemoveButton>
+              </Actions>
+            </div>
+            <Price>R$9,90</Price>
+          </SelectedCoffeeCard>
+        </Card>
       </div>
     </CheckoutContainer>
   );
