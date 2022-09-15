@@ -4,7 +4,7 @@ import {
   Actions,
   CardContainer,
   CartButton,
-  Counter,
+  CounterSelect,
   Details,
   Price,
   Tag,
@@ -47,7 +47,7 @@ export const Card = ({ name, description, price, tags, image }: Props) => {
           R$ <span>{price.toFixed(2)}</span>
         </Price>
         <Actions>
-          <Counter>
+          <CounterSelect>
             <button onClick={decrement}>
               <Minus size={20} color='#8047F8' weight='fill' />
             </button>
@@ -55,7 +55,7 @@ export const Card = ({ name, description, price, tags, image }: Props) => {
             <button onClick={increment}>
               <Plus size={20} color='#8047F8' weight='fill' />
             </button>
-          </Counter>
+          </CounterSelect>
           <CartButton>
             <ShoppingCart size={22} weight='fill' />
           </CartButton>

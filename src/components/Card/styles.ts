@@ -77,7 +77,7 @@ export const Actions = styled.div`
   gap: 0.5rem;
 `;
 
-export const Counter = styled.span`
+export const CounterSelect = styled.span`
   background: ${(props) => props.theme.base.button};
   padding: 0.5rem;
   display: flex;
