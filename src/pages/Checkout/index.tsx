@@ -16,9 +16,11 @@ import {
   Card,
   CardHeader,
   CheckoutContainer,
+  ConfirmOrderButton,
   CounterSelect,
   FormGroup,
   Input,
+  OrderSummary,
   PaymentOptions,
   Price,
   RadioGroup,
@@ -117,6 +119,25 @@ export const Checkout = () => {
             </div>
             <Price>R$9,90</Price>
           </SelectedCoffeeCard>
+
+          <OrderSummary>
+            <ul>
+              <li>
+                <span>Total de Itens</span>
+                <span>R$ 29,79</span>
+              </li>
+              <li>
+                <span>Entrega</span>
+                <span>R$ 3,50</span>
+              </li>
+              <li>
+                <strong>Total</strong>
+                <strong>R$ 33,20</strong>
+              </li>
+            </ul>
+          </OrderSummary>
+
+          <ConfirmOrderButton>CONFIRMAR PEDIDO</ConfirmOrderButton>
         </Card>
       </div>
     </CheckoutContainer>

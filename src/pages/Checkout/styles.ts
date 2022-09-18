@@ -174,3 +174,35 @@ export const RemoveButton = styled.button`
     background: ${(props) => props.theme.base.hover};
   }
 `;
+
+export const OrderSummary = styled.div`
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+`;
+
+export const ConfirmOrderButton = styled.button`
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.6;
+
+  color: ${(props) => props.theme.base.white};
+  background: ${(props) => props.theme.yellow};
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background: ${(props) => props.theme['yellow-dark']};
+  }
+`;
