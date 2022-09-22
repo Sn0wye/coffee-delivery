@@ -1,9 +1,11 @@
 import { MapPin, ShoppingCart } from 'phosphor-react';
 import { Link } from 'wouter';
 import logoImg from '../../assets/logo.svg';
+import { useCart } from '../../hooks/useCart';
 import { ActionBox, HeaderContainer, RightGroup } from './styles';
 
 export const Header = () => {
+  const { total } = useCart();
   return (
     <HeaderContainer>
       <Link to='/'>
@@ -18,7 +20,12 @@ export const Header = () => {
           <MapPin size={22} weight='fill' />
           <span>Porto Alegre, RS</span>
         </ActionBox>
-        <ActionBox backgroundColor='yellow' textColor='yellow'>
+        <ActionBox
+          backgroundColor='yellow'
+          textColor='yellow'
+          showCounter
+          counter={total.items}
+        >
           <ShoppingCart size={22} weight='fill' />
         </ActionBox>
       </RightGroup>
