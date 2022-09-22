@@ -1,5 +1,7 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react';
 import { useState } from 'react';
+import { Coffee } from '../../data/coffee';
+import { useCart } from '../../hooks/useCart';
 import {
   Actions,
   CardContainer,
@@ -8,27 +10,32 @@ import {
   Details,
   Price,
   Tag,
-  Tags,
+  Tags
 } from './styles';
 
 interface Props {
-  name: string;
-  description: string;
-  price: number;
-  tags: string[];
-  image: string;
+  coffee: Coffee;
 }
 
-export const Card = ({ name, description, price, tags, image }: Props) => {
-  const [counter, setCounter] = useState(1);
+export const Card = ({ coffee }: Props) => {
+  const { description, image, name, price, tags } = coffee;
+  const [quantity, setQuantity] = useState(1);
+  const { addProduct } = useCart();
 
-  const increment = () => {
-    setCounter((state) => state + 1);
+  const handleAddProductToCart = () => {
+    addProduct({
+      ...coffee,
+      quantity,
+    });
   };
 
-  const decrement = () => {
-    if (counter <= 1) return;
-    setCounter((state) => state - 1);
+  const handleIncreaseQuantity = () => {
+    setQuantity((state) => state + 1);
+  };
+
+  const handleDecreaseQuantity = () => {
+    if (quantity <= 1) return;
+    setQuantity((state) => state - 1);
   };
 
   return (
@@ -48,15 +55,15 @@ export const Card = ({ name, description, price, tags, image }: Props) => {
         </Price>
         <Actions>
           <CounterSelect>
-            <button onClick={decrement}>
+            <button onClick={handleDecreaseQuantity}>
               <Minus size={20} color='#8047F8' weight='fill' />
             </button>
-            {counter}
-            <button onClick={increment}>
+            {quantity}
+            <button onClick={handleIncreaseQuantity}>
               <Plus size={20} color='#8047F8' weight='fill' />
             </button>
           </CounterSelect>
-          <CartButton>
+          <CartButton onClick={handleAddProductToCart}>
             <ShoppingCart size={22} weight='fill' />
           </CartButton>
         </Actions>

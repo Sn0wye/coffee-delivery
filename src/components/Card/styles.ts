@@ -101,4 +101,5 @@ export const CartButton = styled.button`
   width: 2.375rem;
   height: 2.375rem;
   border-radius: 6px;
+  cursor: pointer;
 `;
