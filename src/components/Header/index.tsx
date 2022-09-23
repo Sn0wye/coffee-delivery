@@ -20,14 +20,16 @@ export const Header = () => {
           <MapPin size={22} weight='fill' />
           <span>Porto Alegre, RS</span>
         </ActionBox>
-        <ActionBox
-          backgroundColor='yellow'
-          textColor='yellow'
-          showCounter
-          counter={total.items}
-        >
-          <ShoppingCart size={22} weight='fill' />
-        </ActionBox>
+        <Link to='/checkout'>
+          <ActionBox
+            backgroundColor='yellow'
+            textColor='yellow'
+            showCounter
+            counter={total.items}
+          >
+            <ShoppingCart size={22} weight='fill' />
+          </ActionBox>
+        </Link>
       </RightGroup>
     </HeaderContainer>
   );
