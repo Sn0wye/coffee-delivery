@@ -18,29 +18,6 @@ export const CheckoutContainer = styled.div`
   }
 `;
 
-export const Card = styled.section`
-  padding: 2.5rem;
-  border-radius: 6px;
-
-  background: ${(props) => props.theme.base.card};
-`;
-
-export const CardHeader = styled.header`
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-
-  h4 {
-    color: ${(props) => props.theme.base.subtitle};
-    font-weight: 400;
-  }
-
-  p {
-    color: ${(props) => props.theme.base.text};
-    font-size: 0.875rem;
-  }
-`;
-
 export const Input = styled.input`
   width: 100%;
   font-size: 0.875rem;
@@ -104,88 +81,6 @@ export const RadioGroup = styled.button<RadioGroupProps>`
       border: 1px solid ${(props) => props.theme.purple};
       background: ${(props) => props.theme['purple-light']};
     `}
-`;
-
-export const SelectedCoffeeCard = styled.div`
-  display: flex;
-  padding: 0.5rem 0.5rem 1.5rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid ${(props) => props.theme.base.button};
-
-  img {
-    width: 4rem;
-    height: 4rem;
-  }
-
-  & > div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 1.25rem;
-    gap: 0.5rem;
-  }
-`;
-
-export const Actions = styled.div`
-  display: flex;
-  gap: 0.5rem;
-`;
-
-export const CounterSelect = styled.span`
-  background: ${(props) => props.theme.base.button};
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 6px;
-
-  button {
-    display: grid;
-    place-content: center;
-    all: unset;
-    cursor: pointer;
-    height: 1.25rem;
-  }
-`;
-
-export const Price = styled.span`
-  font-weight: bold;
-  color: ${(props) => props.theme.base.text};
-  margin-left: auto;
-`;
-
-export const RemoveButton = styled.button`
-  padding: 0.5rem;
-  background: ${(props) => props.theme.base.button};
-  font-size: 0.75rem;
-  line-height: 1.6;
-  color: ${(props) => props.theme.base.text};
-  text-transform: uppercase;
-  border-radius: 6px;
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-
-  transition: background-color 0.2s ease-in-out;
-
-  &:hover {
-    background: ${(props) => props.theme.base.hover};
-  }
-`;
-
-export const OrderSummary = styled.div`
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-
-    li {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
 `;
 
 export const ConfirmOrderButton = styled.button`
