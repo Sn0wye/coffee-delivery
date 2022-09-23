@@ -8,8 +8,7 @@ import {
   Plus,
   Trash,
 } from 'phosphor-react';
-import { useState } from 'react';
-import imagemlegal from '../../assets/coffees/arab.png';
+import { useCart } from '../../hooks/useCart';
 import {
   Actions,
   AddressForm,
@@ -29,14 +28,7 @@ import {
 } from './styles';
 
 export const Checkout = () => {
-  const [counter, setCounter] = useState(1);
-
-  const increment = () => {
-    setCounter(counter + 1);
-  };
-  const decrement = () => {
-    setCounter(counter - 1);
-  };
+  const { products, total, removeProduct, changeQuantityById } = useCart();
 
   return (
     <CheckoutContainer>
@@ -97,34 +89,45 @@ export const Checkout = () => {
         <h3>Cafés selecionados</h3>
 
         <Card>
-          <SelectedCoffeeCard>
-            <img src={imagemlegal} alt='' />
-            <div>
-              <p>Expresso Tradicional</p>
-              <Actions>
-                <CounterSelect>
-                  <button onClick={decrement}>
-                    <Minus size={20} color='#8047F8' weight='fill' />
-                  </button>
-                  {counter}
-                  <button onClick={increment}>
-                    <Plus size={20} color='#8047F8' weight='fill' />
-                  </button>
-                </CounterSelect>
-                <RemoveButton>
-                  <Trash size={16} color='#8047F8' />
-                  Remover
-                </RemoveButton>
-              </Actions>
-            </div>
-            <Price>R$9,90</Price>
-          </SelectedCoffeeCard>
+          {products &&
+            products.map((product) => (
+              <SelectedCoffeeCard key={product.id}>
+                <img src={product.image} alt='' />
+                <div>
+                  <p>{product.name}</p>
+                  <Actions>
+                    <CounterSelect>
+                      <button
+                        onClick={() =>
+                          changeQuantityById(product.id, 'decrease')
+                        }
+                      >
+                        <Minus size={20} color='#8047F8' weight='fill' />
+                      </button>
+                      {product.quantity}
+                      <button
+                        onClick={() =>
+                          changeQuantityById(product.id, 'increase')
+                        }
+                      >
+                        <Plus size={20} color='#8047F8' weight='fill' />
+                      </button>
+                    </CounterSelect>
+                    <RemoveButton onClick={() => removeProduct(product.id)}>
+                      <Trash size={16} color='#8047F8' />
+                      Remover
+                    </RemoveButton>
+                  </Actions>
+                </div>
+                <Price>{`R$ ${product.price.toFixed(2)}`}</Price>
+              </SelectedCoffeeCard>
+            ))}
 
           <OrderSummary>
             <ul>
               <li>
                 <span>Total de Itens</span>
-                <span>R$ 29,79</span>
+                <span>{`R$ ${total.value.toFixed(2)}`}</span>
               </li>
               <li>
                 <span>Entrega</span>
@@ -132,7 +135,7 @@ export const Checkout = () => {
               </li>
               <li>
                 <strong>Total</strong>
-                <strong>R$ 33,20</strong>
+                <strong>{`R$ ${(total.value + 3.5).toFixed(2)}`}</strong>
               </li>
             </ul>
           </OrderSummary>
