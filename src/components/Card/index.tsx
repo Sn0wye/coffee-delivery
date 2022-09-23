@@ -10,7 +10,7 @@ import {
   Details,
   Price,
   Tag,
-  Tags
+  Tags,
 } from './styles';
 
 interface Props {
