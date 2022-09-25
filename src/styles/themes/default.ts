@@ -20,4 +20,6 @@ export const defaultTheme = {
   'purple-light': '#EBE5F9',
   purple: '#8047F8',
   'purple-dark': '#4B2995',
+
+  danger: '#FE5F55',
 };
