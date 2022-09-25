@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import create from 'zustand';
 
-interface Address {
+export interface Address {
   zip: number;
   street: string;
   number: number;
