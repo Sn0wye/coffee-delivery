@@ -1,8 +1,23 @@
 import { MapPin } from 'phosphor-react';
+import { useFormContext } from 'react-hook-form';
+import { usePayment } from '../../hooks/usePayment';
+import { AddressFormData } from '../../schemas/addressForm';
 import { Card, CardHeader } from '../styled/Card';
-import { Form, FormGroup, Input } from './styles';
+import { Error, Form, FormGroup, Input } from './styles';
 
 export const AddressForm = () => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useFormContext<AddressFormData>();
+
+  const { setAddress } = usePayment();
+
+  const onSubmit = (data: AddressFormData) => {
+    setAddress(data);
+  };
+
   return (
     <Card>
       <CardHeader>
@@ -13,20 +28,44 @@ export const AddressForm = () => {
         </div>
       </CardHeader>
 
-      <Form>
+      <Form onSubmit={handleSubmit(onSubmit)} id='addressForm'>
         <FormGroup>
-          <Input type='text' placeholder='CEP' />
+          <Input
+            type='number'
+            placeholder='CEP'
+            {...register('zip', { valueAsNumber: true })}
+          />
         </FormGroup>
-        <Input type='text' placeholder='Rua' />
+        {errors.zip && <Error>{errors.zip.message}</Error>}
+
+        <Input type='text' placeholder='Rua' {...register('street')} />
+        {errors.street && <Error>{errors.street.message}</Error>}
+
         <FormGroup>
-          <Input type='text' placeholder='Número' />
-          <Input type='text' placeholder='Complemento' />
+          <Input
+            type='number'
+            placeholder='Número'
+            {...register('number', { valueAsNumber: true })}
+          />
+          <Input
+            type='text'
+            placeholder='Complemento'
+            {...register('compliment')}
+          />
         </FormGroup>
+        {errors.number && <Error>{errors.number.message}</Error>}
         <FormGroup>
-          <Input type='text' placeholder='Bairro' />
-          <Input type='text' placeholder='Cidade' />
-          <Input type='text' placeholder='UF' />
+          <Input
+            type='text'
+            placeholder='Bairro'
+            {...register('neighborhood')}
+          />
+          <Input type='text' placeholder='Cidade' {...register('city')} />
+          <Input type='text' placeholder='UF' {...register('state')} />
         </FormGroup>
+        {errors.neighborhood && <Error>{errors.neighborhood.message}</Error>}
+        {errors.city && <Error>{errors.city.message}</Error>}
+        {errors.state && <Error>{errors.state.message}</Error>}
       </Form>
     </Card>
   );
