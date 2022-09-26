@@ -60,7 +60,9 @@ export const OrderSummary = () => {
             <strong>{`R$ ${(total.value + 3.5).toFixed(2)}`}</strong>
           </li>
         </ul>
-        <ConfirmOrderButton>Confirmar Pedido</ConfirmOrderButton>
+        <ConfirmOrderButton form='addressForm' type='submit'>
+          Confirmar Pedido
+        </ConfirmOrderButton>
       </Container>
     </Card>
   );
