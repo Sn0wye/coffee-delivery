@@ -16,7 +16,7 @@ export const Checkout = () => {
       number: undefined,
       state: '',
       street: '',
-      zip: 0,
+      zip: undefined,
     },
   });
 
