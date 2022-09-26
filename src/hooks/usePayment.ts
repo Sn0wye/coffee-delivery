@@ -6,7 +6,7 @@ export interface Address {
   street: string;
   number: number;
   compliment?: string;
-  neighbourhood: string;
+  neighborhood: string;
   city: string;
   state: string;
 }
