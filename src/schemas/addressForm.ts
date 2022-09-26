@@ -1,9 +1,7 @@
 import { z } from 'zod';
 
 export const addressFormSchema = z.object({
-  zip: z
-    .string({ required_error: 'CEP é obrigatório' })
-    .length(8, { message: 'CEP deve conter 8 caracteres' }),
+  zip: z.number({ required_error: 'CEP é obrigatório' }).gte(8),
   street: z
     .string({ required_error: 'Rua é obrigatório' })
     .min(1, { message: 'Rua é obrigatório' }),
@@ -13,7 +11,7 @@ export const addressFormSchema = z.object({
       invalid_type_error: 'Número é obrigatório',
     })
     .min(0),
-  compliment: z.string().nullable(),
+  compliment: z.string().optional(),
   neighborhood: z
     .string({ required_error: 'Bairro é obrigatório' })
     .min(1, { message: 'Rua é obrigatório' }),
