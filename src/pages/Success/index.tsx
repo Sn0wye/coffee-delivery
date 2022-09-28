@@ -1,6 +1,8 @@
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react';
+import { Redirect } from 'wouter';
 
 import successImg from '../../assets/success-illustration.svg';
+import { usePayment } from '../../hooks/usePayment';
 import {
   AsideImage,
   Container,
@@ -12,6 +14,11 @@ import {
 } from './styles';
 
 export const Success = () => {
+  const { address, paymentMethod } = usePayment();
+
+  if (!address || !paymentMethod) {
+    return <Redirect to='/' />;
+  }
   return (
     <Container>
       <Main>
@@ -24,9 +31,9 @@ export const Success = () => {
             </ListIcon>
             <ListContent>
               <p>
-                Entrega em <b>Rua João Daniel Martinelli, 102</b>
+                Entrega em <b>{`${address.street}, ${address.number}`}</b>
               </p>
-              <p>Farrapos - Porto Alegre, RS</p>
+              <p>{`${address.neighborhood} - ${address.city}, ${address.state}`}</p>
             </ListContent>
           </ListItem>
           <ListItem>
@@ -44,7 +51,7 @@ export const Success = () => {
             </ListIcon>
             <ListContent>
               <p>Pagamento na entrega</p>
-              <strong>Cartão de Crédito</strong>
+              <strong>{paymentMethod}</strong>
             </ListContent>
           </ListItem>
         </List>
