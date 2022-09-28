@@ -1,5 +1,6 @@
 import { MapPin } from 'phosphor-react';
 import { useFormContext } from 'react-hook-form';
+import { useLocation } from 'wouter';
 
 import { usePayment } from '../../hooks/usePayment';
 import { AddressFormData } from '../../schemas/addressForm';
@@ -14,9 +15,11 @@ export const AddressForm = () => {
   } = useFormContext<AddressFormData>();
 
   const { setAddress } = usePayment();
+  const [, setLocation] = useLocation();
 
   const onSubmit = (data: AddressFormData) => {
     setAddress(data);
+    setLocation('/success');
   };
 
   return (
