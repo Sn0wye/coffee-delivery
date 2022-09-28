@@ -3,12 +3,8 @@ import styled from 'styled-components';
 export const CardContainer = styled.div`
   background: ${props => props.theme.base.card};
   width: 16rem;
-  /* height: 19.375rem; */
   padding: 1.25rem;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 36px;
-  border-bottom-right-radius: 6px;
-  border-bottom-left-radius: 36px;
+  border-radius: 6px 36px;
 
   display: flex;
   flex-direction: column;
