@@ -3,6 +3,7 @@ import { Redirect } from 'wouter';
 
 import successImg from '../../assets/success-illustration.svg';
 import { usePayment } from '../../hooks/usePayment';
+import { getPaymentType } from '../../utils/getPaymentType';
 import {
   AsideImage,
   Container,
@@ -51,7 +52,7 @@ export const Success = () => {
             </ListIcon>
             <ListContent>
               <p>Pagamento na entrega</p>
-              <strong>{paymentMethod}</strong>
+              <strong>{getPaymentType(paymentMethod)}</strong>
             </ListContent>
           </ListItem>
         </List>
