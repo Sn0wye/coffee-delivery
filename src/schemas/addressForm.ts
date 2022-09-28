@@ -8,7 +8,7 @@ export const addressFormSchema = z.object({
   number: z
     .number({
       required_error: 'Número é obrigatório',
-      invalid_type_error: 'Número é obrigatório',
+      invalid_type_error: 'Número é obrigatório'
     })
     .min(0),
   compliment: z.string().optional(),
@@ -21,7 +21,7 @@ export const addressFormSchema = z.object({
     .min(1, { message: 'Rua é obrigatório' }),
   state: z
     .string({ required_error: 'UF é obrigatório' })
-    .length(2, { message: 'UF inválida' }),
+    .length(2, { message: 'UF inválida' })
 });
 
 export type AddressFormData = z.infer<typeof addressFormSchema>;

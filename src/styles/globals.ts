@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   :focus {
-    box-shadow: 0 0 0 1px ${(props) => props.theme['yellow-dark']};
+    box-shadow: 0 0 0 1px ${props => props.theme['yellow-dark']};
   }
 
   body, input, textarea, button {
@@ -27,8 +27,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${(props) => props.theme.background};
-    color: ${(props) => props.theme.base.text};
+    background: ${props => props.theme.background};
+    color: ${props => props.theme.base.text};
     -webkit-font-smoothing: antialiased;
   }
 

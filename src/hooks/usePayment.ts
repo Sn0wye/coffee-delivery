@@ -14,7 +14,7 @@ export interface Address {
 export enum PaymentMethod {
   CREDIT = 'credit',
   DEBIT = 'debit',
-  CASH = 'cash',
+  CASH = 'cash'
 }
 
 interface PaymentContextType {
@@ -24,15 +24,15 @@ interface PaymentContextType {
   setPaymentMethod: (paymentMethod: PaymentMethod) => void;
 }
 
-export const usePayment = create<PaymentContextType>((set) => ({
+export const usePayment = create<PaymentContextType>(set => ({
   paymentMethod: PaymentMethod.CASH,
   address: null,
-  setAddress: (address) => {
+  setAddress: address => {
     set(() => ({
-      address,
+      address
     }));
   },
-  setPaymentMethod: (paymentMethod) => {
+  setPaymentMethod: paymentMethod => {
     set(() => ({ paymentMethod }));
-  },
+  }
 }));

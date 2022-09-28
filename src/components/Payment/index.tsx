@@ -1,4 +1,5 @@
 import { Bank, CreditCard, CurrencyDollar, Money } from 'phosphor-react';
+
 import { PaymentMethod, usePayment } from '../../hooks/usePayment';
 import { Card, CardHeader } from '../styled/Card';
 import { PaymentOptions, RadioGroup } from './styles';

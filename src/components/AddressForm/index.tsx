@@ -1,5 +1,6 @@
 import { MapPin } from 'phosphor-react';
 import { useFormContext } from 'react-hook-form';
+
 import { usePayment } from '../../hooks/usePayment';
 import { AddressFormData } from '../../schemas/addressForm';
 import { Card, CardHeader } from '../styled/Card';
@@ -9,7 +10,7 @@ export const AddressForm = () => {
   const {
     register,
     formState: { errors },
-    handleSubmit,
+    handleSubmit
   } = useFormContext<AddressFormData>();
 
   const { setAddress } = usePayment();

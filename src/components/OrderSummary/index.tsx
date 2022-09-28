@@ -1,4 +1,5 @@
 import { Minus, Plus, Trash } from 'phosphor-react';
+
 import { useCart } from '../../hooks/useCart';
 import { Card } from '../styled/Card';
 import {
@@ -8,7 +9,7 @@ import {
   CounterSelect,
   Price,
   RemoveButton,
-  SelectedCoffeeCard,
+  SelectedCoffeeCard
 } from './styles';
 
 export const OrderSummary = () => {
@@ -16,7 +17,7 @@ export const OrderSummary = () => {
   return (
     <Card>
       {products &&
-        products.map((product) => (
+        products.map(product => (
           <SelectedCoffeeCard key={product.id}>
             <img src={product.image} alt='' />
             <div>

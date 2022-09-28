@@ -34,12 +34,12 @@ export const Main = styled.main`
     font-family: 'Baloo 2', sans-serif;
     font-weight: 800;
     font-size: 3rem;
-    color: ${(props) => props.theme.base.title};
+    color: ${props => props.theme.base.title};
   }
 
   p {
     margin-top: 1rem;
-    color: ${(props) => props.theme.base.subtitle};
+    color: ${props => props.theme.base.subtitle};
     font-size: 1.25rem;
   }
 
@@ -81,8 +81,8 @@ const backgroundColor = (
 
 export const Icon = styled.span<IconProps>`
   padding: 0.5rem;
-  color: ${(props) => props.theme.base.white};
-  background: ${(props) => backgroundColor(props.theme, props.backgroundColor)};
+  color: ${props => props.theme.base.white};
+  background: ${props => backgroundColor(props.theme, props.backgroundColor)};
   border-radius: 9999px;
   width: 2rem;
   height: 2rem;

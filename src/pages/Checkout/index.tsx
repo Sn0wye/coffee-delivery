@@ -1,5 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, useForm } from 'react-hook-form';
+
 import { AddressForm } from '../../components/AddressForm';
 import { OrderSummary } from '../../components/OrderSummary';
 import { Payment } from '../../components/Payment';
@@ -16,8 +17,8 @@ export const Checkout = () => {
       number: undefined,
       state: '',
       street: '',
-      zip: undefined,
-    },
+      zip: undefined
+    }
   });
 
   return (

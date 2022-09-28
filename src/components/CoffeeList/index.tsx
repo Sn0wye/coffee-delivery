@@ -7,7 +7,7 @@ export const CoffeeList = () => {
     <CoffeeListContainer>
       <h2>Nossos cafés</h2>
       <List>
-        {coffeeOptions.map((coffee) => (
+        {coffeeOptions.map(coffee => (
           <Card key={coffee.id} coffee={coffee} />
         ))}
       </List>

@@ -3,18 +3,18 @@ import styled from 'styled-components';
 export const Input = styled.input`
   width: 100%;
   font-size: 0.875rem;
-  background: ${(props) => props.theme.base.input};
-  color: ${(props) => props.theme.base.text};
+  background: ${props => props.theme.base.input};
+  color: ${props => props.theme.base.text};
   padding: 0.75rem;
   border-radius: 4px;
   border: 1px solid transparent;
 
   &::placeholder {
-    color: ${(props) => props.theme.base.label};
+    color: ${props => props.theme.base.label};
   }
 
   &:focus {
-    border: 1px solid ${(props) => props.theme['yellow-dark']};
+    border: 1px solid ${props => props.theme['yellow-dark']};
   }
 `;
 

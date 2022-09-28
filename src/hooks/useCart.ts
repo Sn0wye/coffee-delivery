@@ -1,4 +1,5 @@
 import create from 'zustand';
+
 import { Coffee } from '../data/coffee';
 
 interface Product extends Coffee {
@@ -23,14 +24,14 @@ export const useCart = create<ContextType>((set, get) => ({
   products: [],
   total: {
     items: 0,
-    value: 0,
+    value: 0
   },
-  addProduct: (product) => {
-    const previousProduct = get().products.find((p) => p.id === product.id);
+  addProduct: product => {
+    const previousProduct = get().products.find(p => p.id === product.id);
 
     if (previousProduct) {
       const arrayWithoutProductToBeAdded: Product[] = get().products.filter(
-        (p) => p.id !== product.id
+        p => p.id !== product.id
       );
 
       set(() => ({
@@ -38,68 +39,68 @@ export const useCart = create<ContextType>((set, get) => ({
           ...arrayWithoutProductToBeAdded,
           {
             ...previousProduct,
-            quantity: previousProduct.quantity + product.quantity,
-          },
-        ],
+            quantity: previousProduct.quantity + product.quantity
+          }
+        ]
       }));
 
-      set((state) => ({
+      set(state => ({
         total: state.products.reduce(
           (total, acc) => {
             return {
               items: acc.quantity + total.items,
-              value: acc.price * acc.quantity + total.value,
+              value: acc.price * acc.quantity + total.value
             };
           },
           {
             items: 0,
-            value: 0,
+            value: 0
           }
-        ),
+        )
       }));
       return;
     }
 
-    set((state) => ({
-      products: [...state.products, product],
+    set(state => ({
+      products: [...state.products, product]
     }));
 
-    set((state) => ({
+    set(state => ({
       total: state.products.reduce(
         (total, acc) => {
           return {
             items: acc.quantity + total.items,
-            value: acc.price * acc.quantity + total.value,
+            value: acc.price * acc.quantity + total.value
           };
         },
         {
           items: 0,
-          value: 0,
+          value: 0
         }
-      ),
+      )
     }));
   },
-  removeProduct: (productId) => {
+  removeProduct: productId => {
     const newProductsArray = get().products.filter(
-      (product) => product.id !== productId
+      product => product.id !== productId
     );
     set(() => ({
-      products: newProductsArray,
+      products: newProductsArray
     }));
 
-    set((state) => ({
+    set(state => ({
       total: state.products.reduce(
         (total, acc) => {
           return {
             items: acc.quantity + total.items,
-            value: acc.price * acc.quantity + total.value,
+            value: acc.price * acc.quantity + total.value
           };
         },
         {
           items: 0,
-          value: 0,
+          value: 0
         }
-      ),
+      )
     }));
   },
 
@@ -113,39 +114,39 @@ export const useCart = create<ContextType>((set, get) => ({
       operation = -1;
     }
 
-    const product = get().products.find((p) => p.id === productId);
+    const product = get().products.find(p => p.id === productId);
 
     if (product && action === 'decrease' && product.quantity === 1) return;
 
     const arrayWithoutProductToBeUpdated: Product[] = get().products.filter(
-      (p) => p.id !== productId
+      p => p.id !== productId
     );
 
     if (product) {
-      set((state) => ({
+      set(state => ({
         products: [
           ...arrayWithoutProductToBeUpdated,
           {
             ...product,
-            quantity: product.quantity + operation,
-          },
-        ],
+            quantity: product.quantity + operation
+          }
+        ]
       }));
 
-      set((state) => ({
+      set(state => ({
         total: state.products.reduce(
           (total, acc) => {
             return {
               items: acc.quantity + total.items,
-              value: acc.price * acc.quantity + total.value,
+              value: acc.price * acc.quantity + total.value
             };
           },
           {
             items: 0,
-            value: 0,
+            value: 0
           }
-        ),
+        )
       }));
     }
-  },
+  }
 }));

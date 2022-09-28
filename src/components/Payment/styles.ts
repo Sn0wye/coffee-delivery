@@ -12,8 +12,8 @@ interface RadioGroupProps {
 export const RadioGroup = styled.button<RadioGroupProps>`
   padding: 1rem;
   text-transform: uppercase;
-  color: ${(props) => props.theme.base.text};
-  background: ${(props) => props.theme.base.button};
+  color: ${props => props.theme.base.text};
+  background: ${props => props.theme.base.button};
   font-size: 0.75rem;
   line-height: 1.6;
   display: flex;
@@ -24,13 +24,13 @@ export const RadioGroup = styled.button<RadioGroupProps>`
   border: 1px solid transparent;
 
   &:hover {
-    background: ${(props) => props.theme.base.hover};
+    background: ${props => props.theme.base.hover};
   }
 
   ${({ isActive }) =>
     isActive &&
     css`
-      border: 1px solid ${(props) => props.theme.purple};
-      background: ${(props) => props.theme['purple-light']};
+      border: 1px solid ${props => props.theme.purple};
+      background: ${props => props.theme['purple-light']};
     `}
 `;

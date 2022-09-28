@@ -1,5 +1,6 @@
 import { MapPin, ShoppingCart } from 'phosphor-react';
 import { Link } from 'wouter';
+
 import logoImg from '../../assets/logo.svg';
 import { useCart } from '../../hooks/useCart';
 import { ActionBox, HeaderContainer, RightGroup } from './styles';

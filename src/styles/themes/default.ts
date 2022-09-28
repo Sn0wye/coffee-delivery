@@ -8,7 +8,7 @@ export const defaultTheme = {
     hover: '#D7D5D5',
     button: '#E6E6E5',
     input: '#EDEDED',
-    card: '#F3F2F2',
+    card: '#F3F2F2'
   },
 
   background: '#FAFAFA',
@@ -21,5 +21,5 @@ export const defaultTheme = {
   purple: '#8047F8',
   'purple-dark': '#4B2995',
 
-  danger: '#FE5F55',
+  danger: '#FE5F55'
 };

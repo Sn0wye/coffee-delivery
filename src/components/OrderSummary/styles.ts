@@ -4,7 +4,7 @@ export const SelectedCoffeeCard = styled.div`
   display: flex;
   padding: 0.5rem 0.5rem 1.5rem;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid ${(props) => props.theme.base.button};
+  border-bottom: 1px solid ${props => props.theme.base.button};
 
   img {
     width: 4rem;
@@ -22,10 +22,10 @@ export const SelectedCoffeeCard = styled.div`
 
 export const RemoveButton = styled.button`
   padding: 0.5rem;
-  background: ${(props) => props.theme.base.button};
+  background: ${props => props.theme.base.button};
   font-size: 0.75rem;
   line-height: 1.6;
-  color: ${(props) => props.theme.base.text};
+  color: ${props => props.theme.base.text};
   text-transform: uppercase;
   border-radius: 6px;
   cursor: pointer;
@@ -37,7 +37,7 @@ export const RemoveButton = styled.button`
   transition: background-color 0.2s ease-in-out;
 
   &:hover {
-    background: ${(props) => props.theme.base.hover};
+    background: ${props => props.theme.base.hover};
   }
 `;
 
@@ -47,7 +47,7 @@ export const Actions = styled.div`
 `;
 
 export const CounterSelect = styled.span`
-  background: ${(props) => props.theme.base.button};
+  background: ${props => props.theme.base.button};
   padding: 0.5rem;
   display: flex;
   align-items: center;
@@ -65,7 +65,7 @@ export const CounterSelect = styled.span`
 
 export const Price = styled.span`
   font-weight: bold;
-  color: ${(props) => props.theme.base.text};
+  color: ${props => props.theme.base.text};
   margin-left: auto;
 `;
 
@@ -93,12 +93,12 @@ export const ConfirmOrderButton = styled.button`
   line-height: 1.6;
   text-transform: uppercase;
 
-  color: ${(props) => props.theme.base.white};
-  background: ${(props) => props.theme.yellow};
+  color: ${props => props.theme.base.white};
+  background: ${props => props.theme.yellow};
   transition: background-color 0.2s ease-in-out;
 
   &:not(:disabled):hover {
-    background: ${(props) => props.theme['yellow-dark']};
+    background: ${props => props.theme['yellow-dark']};
   }
 
   &:disabled {

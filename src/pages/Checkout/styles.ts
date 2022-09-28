@@ -11,7 +11,7 @@ export const CheckoutContainer = styled.div`
 
   h3 {
     margin: 2.5rem 0 1rem;
-    color: ${(props) => props.theme.base.subtitle};
+    color: ${props => props.theme.base.subtitle};
     font-weight: 700;
     font-family: 'Baloo 2';
     font-size: 1.125rem;
@@ -28,11 +28,11 @@ export const ConfirmOrderButton = styled.button`
   font-weight: 700;
   line-height: 1.6;
 
-  color: ${(props) => props.theme.base.white};
-  background: ${(props) => props.theme.yellow};
+  color: ${props => props.theme.base.white};
+  background: ${props => props.theme.yellow};
   transition: background-color 0.2s ease-in-out;
 
   &:hover {
-    background: ${(props) => props.theme['yellow-dark']};
+    background: ${props => props.theme['yellow-dark']};
   }
 `;

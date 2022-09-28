@@ -18,12 +18,12 @@ export const RightGroup = styled.div`
 
 const ActionBoxBackgroundColors = {
   purple: 'purple-light',
-  yellow: 'yellow-light',
+  yellow: 'yellow-light'
 } as const;
 
 const ActionBoxTextColors = {
   purple: 'purple-dark',
-  yellow: 'yellow-dark',
+  yellow: 'yellow-dark'
 } as const;
 
 interface ActionBoxProps {
@@ -39,9 +39,9 @@ export const ActionBox = styled.button<ActionBoxProps>`
   gap: 0.25rem;
   padding: 0.5rem;
   font-size: 0.875rem;
-  background: ${(props) =>
+  background: ${props =>
     props.theme[ActionBoxBackgroundColors[props.backgroundColor]]};
-  color: ${(props) => props.theme[ActionBoxTextColors[props.textColor]]};
+  color: ${props => props.theme[ActionBoxTextColors[props.textColor]]};
   border-radius: 6px;
   cursor: pointer;
   transition: filter 0.2s ease-in-out;
@@ -62,8 +62,8 @@ export const ActionBox = styled.button<ActionBoxProps>`
     position: absolute;
     top: -20%;
     right: -20%;
-    color: ${(props) => props.theme.base.white};
-    background: ${(props) => props.theme['yellow-dark']};
+    color: ${props => props.theme.base.white};
+    background: ${props => props.theme['yellow-dark']};
     border-radius: 50%;
     visibility: hidden;
   }

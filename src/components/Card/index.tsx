@@ -1,5 +1,6 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react';
 import { useState } from 'react';
+
 import { Coffee } from '../../data/coffee';
 import { useCart } from '../../hooks/useCart';
 import {
@@ -10,7 +11,7 @@ import {
   Details,
   Price,
   Tag,
-  Tags,
+  Tags
 } from './styles';
 
 interface Props {
@@ -25,24 +26,24 @@ export const Card = ({ coffee }: Props) => {
   const handleAddProductToCart = () => {
     addProduct({
       ...coffee,
-      quantity,
+      quantity
     });
   };
 
   const handleIncreaseQuantity = () => {
-    setQuantity((state) => state + 1);
+    setQuantity(state => state + 1);
   };
 
   const handleDecreaseQuantity = () => {
     if (quantity <= 1) return;
-    setQuantity((state) => state - 1);
+    setQuantity(state => state - 1);
   };
 
   return (
     <CardContainer>
       <img src={image} alt={`Image of a ${name}`} />
       <Tags>
-        {tags.map((tag) => (
+        {tags.map(tag => (
           <Tag key={tag}>{tag}</Tag>
         ))}
       </Tags>

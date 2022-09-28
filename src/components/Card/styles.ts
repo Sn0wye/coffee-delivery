@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const CardContainer = styled.div`
-  background: ${(props) => props.theme.base.card};
+  background: ${props => props.theme.base.card};
   width: 16rem;
   /* height: 19.375rem; */
   padding: 1.25rem;
@@ -18,11 +18,11 @@ export const CardContainer = styled.div`
     font-family: 'Baloo 2';
     font-size: 1.25rem;
     margin-top: 1rem;
-    color: ${(props) => props.theme.base.subtitle};
+    color: ${props => props.theme.base.subtitle};
   }
 
   p {
-    color: ${(props) => props.theme.base.label};
+    color: ${props => props.theme.base.label};
     margin-top: 0.5rem;
     text-align: center;
     font-size: 0.875rem;
@@ -42,8 +42,8 @@ export const Tag = styled.span`
   margin-top: 0.75rem;
 
   padding: 0.25rem 0.5rem;
-  color: ${(props) => props.theme['yellow-dark']};
-  background: ${(props) => props.theme['yellow-light']};
+  color: ${props => props.theme['yellow-dark']};
+  background: ${props => props.theme['yellow-light']};
   border-radius: 100px;
   font-weight: 700;
   text-transform: uppercase;
@@ -60,7 +60,7 @@ export const Details = styled.div`
 
 export const Price = styled.span`
   font-size: 0.875rem;
-  color: ${(props) => props.theme.base.text};
+  color: ${props => props.theme.base.text};
 
   gap: 0.5rem;
 
@@ -78,7 +78,7 @@ export const Actions = styled.div`
 `;
 
 export const CounterSelect = styled.span`
-  background: ${(props) => props.theme.base.button};
+  background: ${props => props.theme.base.button};
   padding: 0.5rem;
   display: flex;
   align-items: center;
@@ -96,8 +96,8 @@ export const CounterSelect = styled.span`
 
 export const CartButton = styled.button`
   padding: 0.5rem;
-  background: ${(props) => props.theme['purple-dark']};
-  color: ${(props) => props.theme.base.card};
+  background: ${props => props.theme['purple-dark']};
+  color: ${props => props.theme.base.card};
   width: 2.375rem;
   height: 2.375rem;
   border-radius: 6px;
