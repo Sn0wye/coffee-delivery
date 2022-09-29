@@ -30,6 +30,6 @@ Apesar de serem poucas funcionalidades, você vai precisar relembrar conceitos c
 - [React Hot Toast](https://react-hot-toast.com/) (toast)
 - [Wouter](https://github.com/molefrog/wouter) (roteamento)
 - [Vite](https://vitejs.dev)
-- ReactJS e Typescript.
+- [ReactJS](https://reactjs.org/) e [Typescript](https://www.typescriptlang.org/).
 
 Feito com 💜  por [Sn0wye](https://github.com/Sn0wye).
