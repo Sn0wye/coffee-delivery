@@ -11,16 +11,6 @@ Nesse desafio, foi desenvolvida uma aplicação para gerenciar um carrinho de co
 - Exibir o total de itens no carrinho no Header
 - Exibir o valor total da soma de itens no carrinho multiplicados pelo valor
 
-Apesar de serem poucas funcionalidades, você vai precisar relembrar conceitos como:
-
-- Estados
-- ContextAPI
-- LocalStorage
-- Imutabilidade do estado
-- Listas e chaves no ReactJS
-- Propriedades
-- Componentização
-
 # Tecnologias Utilizadas
 - [Zustand](https://docs.pmnd.rs/zustand/recipes/recipes) (gerenciamento de estado)
 - [Styled Components](https://styled-components.com/) (estilização)
