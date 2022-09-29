@@ -32,4 +32,17 @@ Apesar de serem poucas funcionalidades, você vai precisar relembrar conceitos c
 - [Vite](https://vitejs.dev)
 - [ReactJS](https://reactjs.org/) e [Typescript](https://www.typescriptlang.org/).
 
+# Como rodar o projeto
+
+Este projeto usa `pnpm` como gerenciador de pacotes
+
+| Script          | Descrição                                                             |
+|-----------------|-----------------------------------------------------------------------|
+| `pnpm dev`      | Roda o projeto localmente em [localhost:5173](https://localhost:5173) |
+| `pnpm build`    | Builda o projeto para produção na pasta **/dist**                     |
+| `pnpm preview`  | Roda o projeto buildado em [localhost:4173](https://localhost:4173)   |
+| `pnpm lint`     | Faz a verificação de erros de linting                                 |
+| `pnpm lint:fix` | Corrige os erros de linting                                           |
+
+
 Feito com 💜  por [Sn0wye](https://github.com/Sn0wye).
