@@ -1,5 +1,7 @@
 # Coffee Delivery
 
+# [Link da aplicação](https://coffee-delivery-pied.vercel.app/)
+
 # Sobre o desafio
 
 Nesse desafio, foi desenvolvida uma aplicação para gerenciar um carrinho de compras de uma cafeteria fictícia, que contém as seguintes funcionalidades:
