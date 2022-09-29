@@ -23,6 +23,12 @@ export const IntroContainer = styled.section`
       width: 50%;
     }
   }
+
+  @media (max-width: 560px) {
+    img {
+      display: none;
+    }
+  }
 `;
 
 export const Main = styled.main`
@@ -55,6 +61,12 @@ export const Main = styled.main`
       align-items: center;
       gap: 0.75rem;
       white-space: nowrap;
+    }
+  }
+
+  @media (max-width: 768px) {
+    ul {
+      grid-template-columns: 1fr;
     }
   }
 `;

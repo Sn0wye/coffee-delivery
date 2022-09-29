@@ -32,4 +32,9 @@ export const List = styled.div`
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 2.5rem;
   }
+
+  @media (max-width: 425px) {
+    grid-template-columns: 1fr;
+    place-items: center;
+  }
 `;
