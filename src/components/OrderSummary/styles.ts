@@ -18,6 +18,18 @@ export const SelectedCoffeeCard = styled.div`
     margin-left: 1.25rem;
     gap: 0.5rem;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+
+    & > span {
+      margin: 0.5rem 0 0;
+    }
+    & > div {
+      align-items: center;
+    }
+  }
 `;
 
 export const RemoveButton = styled.button`
@@ -44,6 +56,10 @@ export const RemoveButton = styled.button`
 export const Actions = styled.div`
   display: flex;
   gap: 0.5rem;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 `;
 
 export const CounterSelect = styled.span`
