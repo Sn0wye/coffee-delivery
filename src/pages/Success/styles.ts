@@ -6,6 +6,12 @@ export const Container = styled.div`
   padding: 0 1rem;
   margin: 5rem auto 0;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    img {
+      display: none;
+    }
+  }
 `;
 
 export const Main = styled.main`
