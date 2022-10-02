@@ -3,6 +3,10 @@ import styled, { css } from 'styled-components';
 export const PaymentOptions = styled.div`
   display: flex;
   gap: 0.75rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 interface RadioGroupProps {

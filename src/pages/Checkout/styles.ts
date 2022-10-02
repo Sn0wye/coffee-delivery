@@ -16,6 +16,10 @@ export const CheckoutContainer = styled.div`
     font-family: 'Baloo 2';
     font-size: 1.125rem;
   }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ConfirmOrderButton = styled.button`
