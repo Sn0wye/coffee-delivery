@@ -11,12 +11,7 @@ export const Checkout = () => {
   const addressForm = useForm<AddressFormData>({
     resolver: zodResolver(addressFormSchema),
     defaultValues: {
-      city: '',
-      compliment: '',
-      neighborhood: '',
       number: undefined,
-      state: '',
-      street: '',
       zip: undefined
     }
   });
