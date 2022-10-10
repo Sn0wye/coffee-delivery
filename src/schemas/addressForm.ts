@@ -1,7 +1,13 @@
 import { z } from 'zod';
 
 export const addressFormSchema = z.object({
-  zip: z.number({ required_error: 'CEP é obrigatório' }).gte(0).lte(99999999),
+  zip: z
+    .number({
+      required_error: 'CEP é obrigatório',
+      invalid_type_error: 'CEP é obrigatório'
+    })
+    .gte(0)
+    .lte(99999999),
   street: z
     .string({ required_error: 'Rua é obrigatório' })
     .min(1, { message: 'Rua é obrigatório' }),
