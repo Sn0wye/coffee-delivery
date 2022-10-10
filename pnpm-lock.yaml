@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@hookform/resolvers': ^2.9.8
-  '@sn0wye/eslint-config': ^1.5.0
+  '@sn0wye/eslint-config': ^1.6.0
   '@types/react': ^18.0.17
   '@types/react-dom': ^18.0.6
   '@types/styled-components': ^5.1.26
@@ -32,7 +32,7 @@ dependencies:
   zustand: 4.1.1_react@18.2.0
 
 devDependencies:
-  '@sn0wye/eslint-config': 1.5.0_typescript@4.8.3
+  '@sn0wye/eslint-config': 1.6.0_typescript@4.8.3
   '@types/react': 18.0.19
   '@types/react-dom': 18.0.6
   '@types/styled-components': 5.1.26
@@ -458,8 +458,8 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@sn0wye/eslint-config/1.5.0_typescript@4.8.3:
-    resolution: {integrity: sha512-470wupWqlVtI9r+8osM91Ji75HfPgopQmEw2f+9VRTTcF7+3vRyd74r5S7GlK8Lo1bnjHdfejNrBIBZk+Dt3iw==}
+  /@sn0wye/eslint-config/1.6.0_typescript@4.8.3:
+    resolution: {integrity: sha512-0/OVlIU0hc/Fw6oH2X57OuA4HPChX+xqqK5d1uj96tqGMXZHDgMso/OLzKvJKLe7rFfAtZhaoddIy8KLx4SMkA==}
     peerDependencies:
       typescript: '>=3.3.1'
     dependencies:
